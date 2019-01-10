@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="spittr.mapper.SpittleMapper">
+    <select id="findOne" resultType="spittr.entity.Spittle">
+    select * from Spittle where id = #{id}
+    </select>
+    <select id="findSpittles" resultType="spittr.entity.Spittle">
+        select * from spittle where id &lt;#{before}  order by id asc limit 0,#{count};
+    </select>
+    <insert id="save" parameterType="spittr.entity.Spittle">
+        insert into spittle(`message`,`time`,`longitude`,`latitude`) value(#{message},#{time},#{longitude},#{latitude});
+    </insert>
+</mapper>

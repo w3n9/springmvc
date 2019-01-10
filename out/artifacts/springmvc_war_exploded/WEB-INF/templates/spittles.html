@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:utext="#{title}">Spittles</title>
+</head>
+<body>
+
+    <ul>
+        <li th:each="item: ${spittleList}">
+            <span th:text="${item.id}"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span th:text="${item.message}"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span th:text="${item.time}"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+        </li>
+    </ul>
+</body>
+</html>

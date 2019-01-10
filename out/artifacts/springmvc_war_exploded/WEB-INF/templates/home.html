@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:utext="#{title}"> Title</title>
+</head>
+<body>
+    <h1 th:utext="#{welcome}"></h1>
+    <a th:href="@{/spittles}" th:utext="#{spittles}"></a>
+    <a th:href="@{/spittr/register}" th:utext="#{register}"></a>
+</body>
+</html>

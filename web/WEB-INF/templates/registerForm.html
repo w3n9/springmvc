@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:utext="#{register}"></title>
+    <link rel="stylesheet" th:href="@{/static/css/style.css}" />
+</head>
+<body>
+    <form method="post" th:object="${spitter}" enctype="multipart/form-data">
+        <div class="errors" th:if="${#fields.hasErrors('*')}">
+            <ul>
+                <li th:each="err: ${#fields.errors('*')}" th:text="${err}"></li>
+            </ul>
+        </div>
+        <label th:class="${#fields.hasErrors('username')}?'error':'common' "  th:utext="#{username}"></label>
+        <input type="text" th:field="*{username}"><br/>
+        <label th:class="${#fields.hasErrors('password')}? 'error' " th:utext="#{password}"></label>
+        <input type="password" th:field="*{password}"><br/>
+        <label th:class="${#fields.hasErrors('firstName')}? 'error' " th:utext="#{firstName}"></label>
+        <input type="text" th:field="*{firstName}"><br/>
+        <label th:class="${#fields.hasErrors('lastName')}? 'error' " th:utext="#{lastName}"></label>
+        <input type="text" th:field="*{lastName}"><br/>
+        <label th:utext="#{head_icon}"></label>
+        <input type="file" name="headIcon" accpet="image/jpeg,image/png.image/gif" /><br/>
+        <input type="submit" th:value="#{register}" />
+    </form>
+</body>
+</html>
